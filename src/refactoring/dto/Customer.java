@@ -69,14 +69,3 @@ public class Customer {
 		return sb.toString();		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
