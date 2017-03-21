@@ -18,22 +18,22 @@ public class Rental {
 		return daysRented;
 	}
 
-	public double getCharge() { // 비디오물당 대여료
-		// 1.일반물(2일)2000원,일일초과당1500원,적립1 ==> (2일 3000원) 일일초과2000, 적립 1
-		// 2.아동물(3일)1500원,일일초과당1500,적립1 ==> (2일 2000원) 일일초과1500, 적립 1
-		// 3.최신물(1일)3000원, 일일초과 3000,적립1+1 ==> (2일 4000원) 일일초과4000, 적립 1+1
-		// 4.Html 출력형식을 요구.
+	public double getCharge() {
+		// 비디오물당 대여료
+		// 1.일반물(2일)2000원,일일초과당1500원,적립1
+		// 2.아동물(3일)1500원,일일초과당1500,적립1
+		// 3.최신물(1일)3000원, 일일초과 3000,적립1+1
 		double result = 0;
 
 		switch (movie.getPriceCode()) {
 		case Movie.REGULAR:
-			result = 0000;
+			result = 2000;
 			if (daysRented > 2) {
 				result += (daysRented - 2) * 1500;
 			}
 			break;
 		case Movie.NEW_RELEASE:
-			result = daysRented * 4000;
+			result = daysRented * 3000;
 			break;
 		case Movie.CHILDREN:
 			result = 1500;
@@ -44,14 +44,12 @@ public class Rental {
 		}
 		return result;
 	}
-	
-	
-	public int getRanterPoints() {
-		if(getMovie().getPriceCode()==Movie.NEW_RELEASE && getDaysRented()>1){
+
+	public int getFrequentRentalPoints() {
+		if (getMovie().getPriceCode() == Movie.NEW_RELEASE && getDaysRented() > 1) {
 			return 2;
-		}else{
+		} else {
 			return 1;
-		}		
+		}
 	}
-	
 }
