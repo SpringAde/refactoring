@@ -43,7 +43,6 @@ public class Customer {
 			result +=each.getFrequentRentalPoints();
 		}
 		return result;
-
 	}
 
 	private double getTotalCharge() {
@@ -70,6 +69,8 @@ public class Customer {
 		sb.append(String.format("<p>누적대여료 : <em>%s</em>%n<p>적립 포인트 : <em>%s</em>%n", getTotalCharge(), getTotalfrequentRanterPoints()));
 
 		return sb.toString();
+		
+		
 
 	}
 
