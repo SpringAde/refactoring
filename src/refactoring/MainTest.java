@@ -34,15 +34,16 @@ public class MainTest {
 		c2.addRental(r4);
 		c2.addRental(r6);
 		
-		System.out.println(c1.statement());
-		System.out.println("===============================");
-		System.out.println(c2.statement());
+		System.out.println("=============html=============");
+		System.out.println(c1.htmlstatement());
+		System.out.println("=============html=============");
+		System.out.println(c2.htmlstatement());
 		System.out.println("=*****************************=");		
 		
 		
-		System.out.println("=============html=============");
-		System.out.println(c1.htmlStatement());
-		System.out.println("=============html=============");
-		System.out.println(c2.htmlStatement());
+		System.out.println("===============================");
+		System.out.println(c1.Statement());
+		System.out.println("===============================");
+		System.out.println(c2.Statement());
 	}
 }
