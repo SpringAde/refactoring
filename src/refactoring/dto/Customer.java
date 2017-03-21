@@ -23,26 +23,31 @@ public class Customer {
 	public String statement(){
 		//대여료와  적립포인트 출력
 		double totalAmount=0;//총대여료
-		int frequentRanterPoints=0;//적립포인트
-		
+		int frequentRanterPoints=0;//적립포인트		
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append(getName() + "고객님의 대여기록\n");
+		
 		for(Rental each : rentals){
-			
-			
-			frequentRanterPoints ++;
-			if(each.getMovie().getPriceCode()==Movie.NEW_RELEASE && each.getDaysRented()>1){
-				frequentRanterPoints ++;
-			}
-			
+			frequentRanterPoints += each.getRanterPoints();	
 			sb.append(String.format("\t%s \t %s%n", each.getMovie().getTitle(), each.getCharge()));
+			
 			totalAmount += each.getCharge();
 		}//for loop
 
 		sb.append(String.format("누적대여료 : %s%n 적립포인트 : %s%n", totalAmount,frequentRanterPoints));
 		return sb.toString();
-	}	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/******************************* 클라이언트 요구사항 *******************************/
 	public String htmlStatement(){
