@@ -31,7 +31,7 @@ public class Movie {
 		// 3.최신물(1일)3000원, 일일초과 3000,적립1+1
 		double result = 0;
 
-		switch (getPriceCode()) {
+		switch (priceCode) {
 		case Movie.REGULAR:
 			result = 2000;
 			if (daysRented > 2) {
@@ -49,5 +49,13 @@ public class Movie {
 			break;
 		}
 		return result;
+	}
+	
+	public int getFrequentRentalPoints(int aDaysRented) {
+		if (priceCode == Movie.NEW_RELEASE && aDaysRented > 1) {
+			return 2;
+		} else {
+			return 1;
+		}
 	}
 }
