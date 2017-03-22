@@ -6,7 +6,7 @@ public class ReqularPrice extends Price {
 
 	@Override
 	public int getPriceCode() {
-		return Movie.REGULAR;
+		return REGULAR;
 	}
 
 	@Override

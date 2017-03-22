@@ -1,21 +1,24 @@
 package refactoring.price;
 
-import refactoring.dto.Movie;
-
-public class NewReleasePrice extends Price {
+public class AdultPrice extends Price {
 
 	@Override
 	public int getPriceCode() {
-		return NEW_RELEASE;
+		return ADULT;
 	}
+
 	@Override
 	public double getCharge(int daysRented) {
-		double result = 0;		
-		result = daysRented * 3000;			
+		double result = 0;
+		result = daysRented*5000;
 		return result;
 	}
 
+	@Override
 	public int getFrequentRentalPoints(int aDaysRented) {
-		return aDaysRented>1? 2:1;
+		return aDaysRented>1? 3 : 2;
 	}
+	
+	
+
 }
