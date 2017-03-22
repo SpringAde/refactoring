@@ -26,9 +26,8 @@ public class Customer {
 
 	public List<Rental> getRentals() {
 		return rentals;
-	}
-	
-	
+	}	
+
 	public String Statement(){
 		Statement stmt = new TextStatement();		
 		return stmt.value(this);
@@ -38,8 +37,8 @@ public class Customer {
 		Statement stmt = new HtmlStatement();		
 		return stmt.value(this);
 	}
-	
-	
+
+
 	public int getTotalfrequentRanterPoints() {
 		int result=0;
 		for(Rental each : rentals){
